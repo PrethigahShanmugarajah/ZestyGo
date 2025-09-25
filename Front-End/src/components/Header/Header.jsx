@@ -5,10 +5,11 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-contents">
-        <h2>Craving? ZestyGo’s Got You!</h2>
+        <h2>Delicious Meals, Delivered to You</h2>
         <p>
-          Delicious meals delivered hot & fresh, straight to your door in
-          minutes.
+          Explore a wide variety of freshly prepared dishes made with care and
+          quality ingredients. At ZestyGo, we bring flavor, convenience, and joy
+          straight to your table.
         </p>
         <button>View Menu</button>
       </div>

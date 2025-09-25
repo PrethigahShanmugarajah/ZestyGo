@@ -37,9 +37,11 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
+        <i className="bi bi-search navbar-right"></i>
+        {/* <img src={assets.search_icon} alt="" /> */}
         <div className="navbar-search-icon">
-          <img src={assets.basket_icon} alt="" />
+          <i className="bi bi-basket3-fill"></i>
+          {/* <img src={assets.basket_icon} alt="" /> */}
           <div className="dot"></div>
         </div>
         <button>Sign In</button>

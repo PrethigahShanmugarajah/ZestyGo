@@ -20,21 +20,21 @@
 
 .header-contents h2 {
   font-weight: 500;
-  color: #fdfdfd;
+  color: #FDFDFD;
   font-size: max(4.5vw, 22px);
 }
 
 .header-contents p {
-  color: #fdfdfd;
+  color: #FDFDFD;
   font-size: 1vw;
 }
 
 .header-contents button {
   border: none;
-  color: #49557e;
+  color: #49557E;
   font-weight: 500;
   padding: 1vw 2.3vw;
-  background-color: #fdfdfd;
+  background-color: #FDFDFD;
   font-size: max(1vw, 13px);
   border-radius: 50px;
 }
