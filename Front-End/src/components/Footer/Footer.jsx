@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.Logo} alt="" />
+          <img src={assets.Logo} alt="ZestyGo Logo" className="footer-logo" />
           <p>
             ZestyGo brings your favorite meals straight to your doorstep. We
             partner with the best restaurants to deliver fresh, delicious, and
@@ -16,9 +16,9 @@ const Footer = () => {
           </p>
 
           <div className="footer-social-icons">
-            <img src={assets.facebook_icon} alt="" />
-            <img src={assets.twitter_icon} alt="" />
-            <img src={assets.linkedin_icon} alt="" />
+            <i className="bi bi-facebook"></i>
+            <i className="bi bi-twitter"></i>
+            <i className="bi bi-linkedin"></i>
           </div>
         </div>
 
@@ -36,7 +36,7 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+94 000-000-0000</li>
-            <li>zestygo@gmail.com</li>
+            <li>zestygo@zestygo.com</li>
           </ul>
         </div>
       </div>

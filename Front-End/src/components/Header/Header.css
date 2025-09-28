@@ -20,21 +20,41 @@
 
 .header-contents h2 {
   font-weight: 500;
-  color: #FDFDFD;
+  color: #fdfdfd;
   font-size: max(4.5vw, 22px);
 }
 
 .header-contents p {
-  color: #FDFDFD;
+  color: #fdfdfd;
   font-size: 1vw;
 }
 
 .header-contents button {
   border: none;
-  color: #49557E;
+  color: #49557e;
   font-weight: 500;
   padding: 1vw 2.3vw;
-  background-color: #FDFDFD;
+  background-color: #fdfdfd;
   font-size: max(1vw, 13px);
   border-radius: 50px;
+}
+
+@media (max-width: 1050px) {
+  .header-contents {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header-contents {
+    max-width: 65%;
+  }
+
+  .header-contents p {
+    display: none;
+  }
+
+  .header-contents button {
+    padding: 2vw 4vw;
+  }
 }

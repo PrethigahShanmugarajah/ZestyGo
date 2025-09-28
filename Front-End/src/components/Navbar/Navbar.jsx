@@ -1,50 +1,62 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
+import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
+
+  const { getTotalCartAmount } = useContext(StoreContext);
+
   return (
     <div className="navbar">
-      <img src={assets.Logo} alt="Logo" className="logo" />
+      <Link to="/">
+        <img src={assets.Logo} alt="Logo" className="logo" />{" "}
+      </Link>
+
       <ul className="navbar-menu">
-        <li
+        <Link
+          to="/"
           className={menu === "home" ? "active" : ""}
           onClick={() => setMenu("home")}
         >
           Home
-        </li>
+        </Link>
 
-        <li
+        <a
+          href="#explore-menu"
           className={menu === "menu" ? "active" : ""}
           onClick={() => setMenu("menu")}
         >
           Menu
-        </li>
+        </a>
 
-        <li
+        <a
+          href="#app-download"
           className={menu === "mobile-app" ? "active" : ""}
           onClick={() => setMenu("mobile-app")}
         >
           Mobile-App
-        </li>
+        </a>
 
-        <li
+        <a
+          href="#footer"
           className={menu === "contact" ? "active" : ""}
           onClick={() => setMenu("contact")}
         >
           Contact Us
-        </li>
+        </a>
       </ul>
       <div className="navbar-right">
-        <i className="bi bi-search navbar-right"></i>
-        {/* <img src={assets.search_icon} alt="" /> */}
+        <i className="bi bi-search"></i>
         <div className="navbar-search-icon">
-          <i className="bi bi-basket3-fill"></i>
-          {/* <img src={assets.basket_icon} alt="" /> */}
-          <div className="dot"></div>
+          <Link to="/cart">
+            <i className="bi bi-basket3-fill"></i>
+          </Link>
+          <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
-        <button>Sign In</button>
+        <button onClick={() => setShowLogin(true)}>Sign In</button>
       </div>
     </div>
   );

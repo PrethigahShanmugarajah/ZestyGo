@@ -4,6 +4,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ id, name, price, description, image }) => {
+  const currency = import.meta.env.VITE_CURRENCY;
   const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
   return (
@@ -11,35 +12,39 @@ const FoodItem = ({ id, name, price, description, image }) => {
       <div className="food-item-img-container">
         <img className="food-item-image" src={image} alt="" />
         {!cartItems[id] ? (
-          <img
-            className="add"
+          <i
+            className="bi bi-plus-circle-fill add"
             onClick={() => addToCart(id)}
-            src={assets.add_icon_white}
-            alt=""
-          />
+          ></i>
         ) : (
           <div className="food-item-counter">
-            <img
+            <i
+              className="bi bi-dash-circle-fill"
               onClick={() => removeFromCart(id)}
-              src={assets.remove_icon_red}
-              alt=""
-            />
+            ></i>
+
             <p>{cartItems[id]}</p>
-            <img
+            <i
+              className="bi bi-plus-circle-fill add"
               onClick={() => addToCart(id)}
-              src={assets.add_icon_green}
-              alt=""
-            />
+            ></i>
           </div>
         )}
       </div>
       <div className="food-item-info">
         <div className="food-item-name-rating">
           <p>{name}</p>
-          <img src={assets.rating_starts} alt="" />
+          {/* <img src={assets.rating_starts} alt="" /> */}
+          <i className="bi bi-star-fill"></i>
+          <i className="bi bi-star-fill"></i>
+          <i className="bi bi-star-fill"></i>
+          <i className="bi bi-star-fill"></i>
+          <i className="bi bi-star"></i>
         </div>
         <p className="food-item-desc">{description}</p>
-        <p className="food-item-price">LKR {price}</p>
+        <p className="food-item-price">
+          {currency} {price}
+        </p>
       </div>
     </div>
   );
