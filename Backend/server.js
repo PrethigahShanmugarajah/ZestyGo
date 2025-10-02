@@ -6,6 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
+import userRouter from "./routes/userRoute.js";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ connectDB();
 /* ---------------- API Endpoints ---------------- */
 app.use("/api/food", foodRouter);
 app.use("/images", express.static(path.join(__dirname, "uploads")));
+app.use("/api/user", userRouter);
 
 app.get("/", (req, res) => {
   res.send("API IS WORKING");

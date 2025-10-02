@@ -10,4 +10,37 @@ export const assets = {
   parcel_icon,
 };
 
-export const url = "http://localhost:4000";
+export const menu_list = [
+  {
+    menu_name: "Rice & Curry",
+  },
+  {
+    menu_name: "Kottu Roti",
+  },
+  {
+    menu_name: "Hoppers (Appam)",
+  },
+  {
+    menu_name: "String Hoppers",
+  },
+  {
+    menu_name: "Fried Rice",
+  },
+  // {
+  //   menu_name: "Devilled Dishes",
+  // },
+  // {
+  //   menu_name: "Seafood Specials",
+  // },
+  // {
+  //   menu_name: "Parotta & Curry",
+  // },
+  // {
+  //   menu_name: "Biriyani",
+  // },
+  // {
+  //   menu_name: "Short Eats",
+  // },
+];
+
+// export const url = "http://localhost:4000";
