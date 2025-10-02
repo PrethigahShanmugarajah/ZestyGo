@@ -7,7 +7,7 @@ import validator from "validator";
 /* ---------------- Login User ---------------- */
 const loginUser = async (req, res) => {};
 
-/* ---------------- register User ---------------- */
+/* ---------------- Register User ---------------- */
 const registerUser = async (req, res) => {};
 
 export default { loginUser, registerUser };
