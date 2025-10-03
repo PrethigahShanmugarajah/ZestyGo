@@ -1,7 +1,11 @@
+// Frontend/src/contect/StoreContext.jsx
 import { createContext, useEffect, useState } from "react";
 import { food_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
+
+const url = import.meta.env.VITE_BACKEND_URL;
+const [token, setToken] = useState("");
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
@@ -42,6 +46,9 @@ const StoreContextProvider = (props) => {
     removeFromCart,
     getTotalCartAmount,
     getDeliveryFee,
+    url,
+    token,
+    setToken,
   };
 
   return (
