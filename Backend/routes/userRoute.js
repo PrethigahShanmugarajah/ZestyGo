@@ -1,4 +1,4 @@
-// Backend/routes/userRoute.js
+// Backend / routes / userRoute.js
 import express from "express";
 import { registerUser, loginUser } from "../controllers/userController.js";
 

@@ -1,3 +1,4 @@
+// Admin / src / pages / Add / Add.jsx
 import React, { useState } from "react";
 import "./Add.css";
 import { assets, menu_list } from "../../assets/assets";

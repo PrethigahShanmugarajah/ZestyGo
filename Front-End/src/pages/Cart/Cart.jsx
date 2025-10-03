@@ -1,3 +1,4 @@
+// Front-End / src / pages / Cart / Cart.jsx
 import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
@@ -12,6 +13,7 @@ const Cart = () => {
     removeFromCart,
     getTotalCartAmount,
     getDeliveryFee,
+    url,
   } = useContext(StoreContext);
 
   const navigate = useNavigate();
@@ -27,14 +29,16 @@ const Cart = () => {
           <p>Total</p>
           <p>Remove</p>
         </div>
+
         <br />
         <hr />
+
         {food_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
               <div>
                 <div className="cart-items-title cart-items-item">
-                  <img src={item.image} alt="" />
+                  <img src={`${url}/images/${item.image}`} alt={item.name} />
                   <p>{item.name}</p>
                   <p>
                     {currency} {item.price}
@@ -52,6 +56,7 @@ const Cart = () => {
             );
           }
         })}
+
         <div className="cart-bottom">
           <div className="cart-total">
             <h2>Cart Total</h2>
@@ -62,14 +67,18 @@ const Cart = () => {
                   {currency} {getTotalCartAmount()}
                 </p>
               </div>
+
               <hr />
+
               <div className="cart-total-details">
                 <p>Delivery Fee (5%)</p>
                 <p>
                   {currency} {getDeliveryFee()}
                 </p>
               </div>
+
               <hr />
+
               <div className="cart-total-details">
                 <b>Total</b>
                 <b>
@@ -77,6 +86,7 @@ const Cart = () => {
                 </b>
               </div>
             </div>
+
             <button onClick={() => navigate("/order")}>
               PROCEED TO CHECKOUT
             </button>

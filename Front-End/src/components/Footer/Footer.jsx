@@ -1,3 +1,4 @@
+// Front-End / src / components / Footer / Footer.jsx
 import React from "react";
 import "./Footer.css";
 import { assets } from "../../assets/assets";

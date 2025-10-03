@@ -1,3 +1,4 @@
+// Admin / src / assets / assets.js
 import Logo_Admin from "./Logo_Admin.png";
 import Profile_Image from "./Profile_Image.jpeg";
 import upload_area from "./upload_area.png";

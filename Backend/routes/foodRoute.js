@@ -1,4 +1,4 @@
-// Backend/routes/foodRoute.js
+// Backend / routes / foodRoute.js
 import express from "express";
 import {
   addFood,

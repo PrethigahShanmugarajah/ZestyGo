@@ -1,3 +1,4 @@
+// Front-End / src / components / LoginPopup / LoginPopup.jsx
 import React, { useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
@@ -22,23 +23,57 @@ const LoginPopup = ({ setShowLogin }) => {
     setData((data) => ({ ...data, [name]: value }));
   };
 
+  // const onLogin = async (event) => {
+  //   event.preventDefault();
+  //   let newUrl = url;
+  //   if (currState === "Login") {
+  //     newUrl += "/api/user/login";
+  //   } else {
+  //     newUrl += "/api/user/register";
+  //   }
+
+  //   const response = await axios.post(newUrl, data);
+
+  //   if (response.data.success) {
+  //     setToken(response.data.token);
+  //     localStorage.setItem("token", response.data.token);
+  //     setShowLogin(false);
+  //     toast.success(
+  //       currState === "Login" ? "Login successful!" : "Registration successful!"
+  //     );
+  //   } else {
+  //     toast.error(response.data.message);
+  //   }
+  // };
+
   const onLogin = async (event) => {
     event.preventDefault();
-    let newUrl = url;
-    if (currState === "Login") {
-      newUrl += "/api/user/login";
-    } else {
-      newUrl += "/api/user/register";
-    }
 
-    const response = await axios.post(newUrl, data);
-    if (response.data.success) {
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
-      setShowLogin(false);
-      toast.success(currState === "Login" ? "Login successful!" : "Registration successful!");
-    } else {
-      toast.error(response.data.message);
+    try {
+      let newUrl = url;
+      if (currState === "Login") {
+        newUrl += "/api/user/login";
+      } else {
+        newUrl += "/api/user/register";
+      }
+
+      const response = await axios.post(newUrl, data);
+
+      if (response.data.success) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        setShowLogin(false);
+
+        toast.success(
+          currState === "Login"
+            ? "Login successful!"
+            : "Registration successful!"
+        );
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || error.message);
     }
   };
 

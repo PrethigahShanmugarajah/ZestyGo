@@ -1,3 +1,4 @@
+// Front-End / src / App.jsx
 import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router";
@@ -23,18 +24,7 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
-      <ToastContainer
-      // position="top-right"
-      // autoClose={3000}
-      // hideProgressBar={false}
-      // newestOnTop={false}
-      // closeOnClick
-      // rtl={false}
-      // pauseOnFocusLoss
-      // draggable
-      // pauseOnHover
-      // theme="light"
-      />
+      <ToastContainer />
     </>
   );
 };

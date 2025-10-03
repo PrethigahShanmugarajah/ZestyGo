@@ -1,3 +1,4 @@
+// Admin / src / pages / List / List.jsx
 import React, { useEffect, useState } from "react";
 import "./List.css";
 import axios from "axios";
