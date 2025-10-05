@@ -2,7 +2,7 @@
 import foodModel from "../models/foodModel.js";
 import fs from "fs";
 
-/* ---------------- Add Food Item [ID] ---------------- */
+/* ---------------- ADD FOOD ITEM [ID] ---------------- */
 const addFood = async (req, res) => {
   let image_filename = `${req.file.filename}`;
 
@@ -29,7 +29,7 @@ const addFood = async (req, res) => {
   }
 };
 
-/* ---------------- All Food List ---------------- */
+/* ---------------- ALL FOOD LIST ---------------- */
 const listFood = async (req, res) => {
   try {
     const food = await foodModel.find({});
@@ -40,7 +40,7 @@ const listFood = async (req, res) => {
   }
 };
 
-/* ---------------- Remove Food Item [ID] ---------------- */
+/* ---------------- REMOVE FOOD ITEM [ID] ---------------- */
 const removeFood = async (req, res) => {
   try {
     const food = await foodModel.findById(req.body.id);

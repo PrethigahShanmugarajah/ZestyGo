@@ -4,12 +4,12 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import validator from "validator";
 
-/* ---------------- Create JWT Token ---------------- */
+/* ---------------- CREATE JWT TOKEN ---------------- */
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "30d" });
 };
 
-/* ---------------- Login User ---------------- */
+/* ---------------- LOGIN USER ---------------- */
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
@@ -55,7 +55,7 @@ export const loginUser = async (req, res) => {
   }
 };
 
-/* ---------------- Register User ---------------- */
+/* ---------------- REGISTER USER ---------------- */
 export const registerUser = async (req, res) => {
   const { name, password, email } = req.body;
   // Checking is user already exists

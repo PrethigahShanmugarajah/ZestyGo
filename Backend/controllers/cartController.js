@@ -2,7 +2,7 @@
 import userModel from "../models/userModel.js";
 import foodModel from "../models/foodModel.js";
 
-/* ---------------- Add Food Item to User Cart ---------------- */
+/* ---------------- ADD FOOD ITEM TO USER CART ---------------- */
 export const addToCart = async (req, res) => {
   try {
     const { userId, itemId } = req.body;
@@ -30,7 +30,7 @@ export const addToCart = async (req, res) => {
     }
 
     /* ---------------- Debug log ---------------- */
-    console.log("Before update:", cartData);
+    // console.log("Before update:", cartData);
     /* ---------------- Debug log ---------------- */
 
     // Save updated cart
@@ -73,7 +73,7 @@ export const addToCart = async (req, res) => {
   }
 };
 
-/* ---------------- Remove Food Item from User Cart ---------------- */
+/* ---------------- REMOVE FOOD ITEM FROM USER CART ---------------- */
 export const removeFromCart = async (req, res) => {
   try {
     const { userId, itemId } = req.body;
@@ -158,7 +158,7 @@ export const removeFromCart = async (req, res) => {
   }
 };
 
-/* ---------------- Fetch User Cart Data ---------------- */
+/* ---------------- FETCH USER CART DATA ---------------- */
 export const getCart = async (req, res) => {
   try {
     const userData = await userModel.findById(req.body.userId);
