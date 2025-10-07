@@ -60,7 +60,7 @@ export const placeOrder = async (req, res) => {
       success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
       cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
     });
-    console.log("✅ Stripe session created:", session.url);
+    console.log("Stripe session created:", session.url);
 
     const itemsWithTotal = items.map((item) => ({
       ...item,
@@ -150,10 +150,42 @@ export const userOrder = async (req, res) => {
     const orders = await orderModel.find({ userId: req.body.userId });
     res.json({ success: true, orders });
   } catch (error) {
-    console.error("Error fetching orders:", error);
+    console.error(error);
     res.status(500).json({
       success: false,
       message: "Error fetching orders",
+      error: error.message,
+    });
+  }
+};
+
+/* ---------------- LISTING ORDERS FOR ADMIN PANEL ---------------- */
+export const listOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({});
+    res.json({ success: true, data: orders });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Error fetching orders",
+      error: error.message,
+    });
+  }
+};
+
+/* ---------------- UPDATING ORDER STATUS ---------------- */
+export const updateStatus = async (req, res) => {
+  try {
+    await orderModel.findByIdAndUpdate(req.body.orderId, {
+      status: req.body.status,
+    });
+    res.json({ success: true, message: "Status Updated" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Error",
       error: error.message,
     });
   }

@@ -4,9 +4,11 @@ import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
   const currency = import.meta.env.VITE_CURRENCY;
+  const navigate = useNavigate();
 
   const {
     food_list,
@@ -37,39 +39,57 @@ const PlaceOrder = () => {
 
   const placeOrder = async (event) => {
     event.preventDefault();
-    let orderItems = [];
 
-    food_list.map((item) => {
-      if (cartItems[item._id] > 0) {
-        let itemInfo = item;
-        itemInfo["quantity"] = cartItems[item._id];
-        orderItems.push(itemInfo);
+    try {
+      let orderItems = [];
+
+      food_list.map((item) => {
+        if (cartItems[item._id] > 0) {
+          let itemInfo = item;
+          itemInfo["quantity"] = cartItems[item._id];
+          orderItems.push(itemInfo);
+        }
+      });
+
+      console.log("Order Items:", orderItems);
+
+      let OrderData = {
+        address: data,
+        items: orderItems,
+        amount: getTotalCartAmount() + getDeliveryFee(),
+      };
+
+      console.log("Order Data:", OrderData);
+
+      let response = await axios.post(url + "/api/order/place", OrderData, {
+        headers: { token },
+      });
+
+      if (response.data.success) {
+        const { session_url, order } = response.data;
+        toast.success(
+          `${order.firstName}, your order of ${order.items.length} item(s) totaling ${currency} ${order.amount} has been placed! Redirecting to payment...`,
+          { autoClose: 5000 }
+        );
+        window.location.replace(session_url);
+      } else {
+        toast.error("Failed to place order. Please try again.");
       }
-    });
-
-    // console.log(orderItems);
-
-    let OrderData = {
-      address: data,
-      items: orderItems,
-      amount: getTotalCartAmount() + getDeliveryFee(),
-    };
-
-    let response = await axios.post(url + "/api/order/place", OrderData, {
-      headers: { token },
-    });
-
-    if (response.data.success) {
-      const { session_url, order } = response.data;
-      toast.success(
-        `${order.firstName}, your order of ${order.items.length} item(s) totaling ${currency} ${order.amount} has been placed! Redirecting to payment...`,
-        { autoClose: 5000 }
+    } catch (error) {
+      console.error("Error placing order:", error);
+      toast.error(
+        `Error placing order: ${error.response?.data?.message || error.message}`
       );
-      window.location.replace(session_url);
-    } else {
-      toast.error("Failed to place order. Please try again.");
     }
   };
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/cart");
+    } else if (getTotalCartAmount() === 0) {
+      navigate("/cart");
+    }
+  }, [token]);
 
   // useEffect(() => {
   //   console.log(data);
