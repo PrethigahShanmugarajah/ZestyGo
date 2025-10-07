@@ -71,26 +71,6 @@ Each folder represents an independent app with its own dependencies.
 
 ---
 
-## 🖼️ Screenshots
-
-### 🏠 User Interface
-
-![User Homepage](Frontend-ZestyGo/Screenshots/User_HomePage.png)
-
-### 🛒 Cart Page
-
-![Cart Page](Frontend-ZestyGo/Screenshots/User_Cart.png)
-
-### 💳 Checkout Page
-
-![Checkout Page](Frontend-ZestyGo/Screenshots/Checkout.png)
-
-### 🧾 Admin Dashboard
-
-![Admin Dashboard](Admin-ZestyGo/Screenshots/Admin_Dashboard.png)
-
----
-
 ## ⚙️ How to Run the Project
 
 ### 1️⃣ Clone the Repository
