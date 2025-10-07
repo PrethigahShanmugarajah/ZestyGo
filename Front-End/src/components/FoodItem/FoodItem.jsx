@@ -12,7 +12,6 @@ const FoodItem = ({ id, name, price, description, image }) => {
   return (
     <div className="food-item">
       <div className="food-item-img-container">
-        {/* <img className="food-item-image" src={url + "/images" + image} alt="" /> */}
         <img
           className="food-item-image"
           src={`${url}/images/${image}`}
@@ -41,7 +40,6 @@ const FoodItem = ({ id, name, price, description, image }) => {
       <div className="food-item-info">
         <div className="food-item-name-rating">
           <p>{name}</p>
-          {/* <img src={assets.rating_starts} alt="" /> */}
           <i className="bi bi-star-fill"></i>
           <i className="bi bi-star-fill"></i>
           <i className="bi bi-star-fill"></i>

@@ -44,7 +44,6 @@ const Order = ({ url }) => {
       <div className="order-list">
         {orders.map((order, index) => (
           <div key={index} className="order-item">
-            {/* <img src={assets.parcel_icon} alt="" /> */}
             <i className="bi bi-box"></i>
             <div>
               <p className="order-item-food">

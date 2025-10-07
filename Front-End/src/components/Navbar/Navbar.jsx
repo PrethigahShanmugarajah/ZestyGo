@@ -68,17 +68,12 @@ const Navbar = ({ setShowLogin }) => {
         </div>
 
         {!token ? (
-          <button onClick={() => setShowLogin(true)}>
-            {/* <i className="bi bi-box-arrow-in-right me-2"></i> */}
-            Sign In
-          </button>
+          <button onClick={() => setShowLogin(true)}>Sign In</button>
         ) : (
           <div className="navbar-profile">
-            {/* <img src={assets.profile_icon} alt="" /> */}
             <i className="bi bi-person-circle"></i>
             <ul className="nav-profile-dropdown">
               <li onClick={() => navigate("myorders")}>
-                {/* <img src={assets.bag_icon} alt="" /> */}
                 <i className="bi bi-bag me-2"></i>
                 <p>Orders</p>
               </li>
@@ -86,7 +81,6 @@ const Navbar = ({ setShowLogin }) => {
               <hr />
 
               <li onClick={logout}>
-                {/* <img src={assets.logout_icon} alt="" /> */}
                 <i className="bi bi-box-arrow-right me-2"></i>
                 <p>Logout</p>
               </li>
