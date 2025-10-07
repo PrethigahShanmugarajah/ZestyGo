@@ -1,10 +1,3 @@
-Perfect 👍 — you followed the **GreatStack Food Ordering App (MERN)** tutorial, and your project name is **ZestyGo**.
-
-Here’s your **detailed and professional `README.md`** for **ZestyGo – Full Stack Food Ordering Website (MERN Stack)**, formatted like your Doctor Booking System README but fully customized 👇
-
----
-
-```markdown
 # 🍔 ZestyGo – Full Stack Food Ordering Website (MERN Stack)
 
 [![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)](https://react.dev/)
@@ -65,13 +58,14 @@ It includes **Frontend**, **Backend**, and an **Admin Panel** for managing food 
 ---
 
 ## 📁 Folder Structure
+
 ```
 
 Frontend-ZestyGo/
 Backend-ZestyGo/
 Admin-ZestyGo/
 
-````
+```
 
 Each folder represents an independent app with its own dependencies.
 
@@ -80,15 +74,19 @@ Each folder represents an independent app with its own dependencies.
 ## 🖼️ Screenshots
 
 ### 🏠 User Interface
+
 ![User Homepage](Frontend-ZestyGo/Screenshots/User_HomePage.png)
 
 ### 🛒 Cart Page
+
 ![Cart Page](Frontend-ZestyGo/Screenshots/User_Cart.png)
 
 ### 💳 Checkout Page
+
 ![Checkout Page](Frontend-ZestyGo/Screenshots/Checkout.png)
 
 ### 🧾 Admin Dashboard
+
 ![Admin Dashboard](Admin-ZestyGo/Screenshots/Admin_Dashboard.png)
 
 ---
@@ -96,10 +94,11 @@ Each folder represents an independent app with its own dependencies.
 ## ⚙️ How to Run the Project
 
 ### 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/PrethigahShanmugarajah/ZestyGo.git
 cd ZestyGo
-````
+```
 
 ### 2️⃣ Backend Setup
 
