@@ -108,8 +108,6 @@ npm install
 npm run server
 ```
 
-> The backend will start on [http://localhost:4000](http://localhost:4000)
-
 ### 3️⃣ Frontend Setup
 
 ```bash
@@ -117,8 +115,6 @@ cd Frontend-ZestyGo
 npm install
 npm run dev
 ```
-
-> The frontend will start on [http://localhost:5173](http://localhost:5173)
 
 ### 4️⃣ Admin Panel Setup
 
@@ -128,8 +124,6 @@ npm install
 npm run dev
 ```
 
-> The admin panel will start on [http://localhost:5174](http://localhost:5174)
-
 ---
 
 ## 🔑 Environment Variables
@@ -137,11 +131,11 @@ npm run dev
 Create a `.env` file inside your **Backend-ZestyGo/** directory and add the following:
 
 ```
-PORT=4000
+PORT=your_port_number
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 STRIPE_SECRET_KEY=your_stripe_secret_key
-FRONTEND_URL=http://localhost:5173
+FRONTEND_URL=your_frontend_url
 ```
 
 ---
@@ -149,34 +143,18 @@ FRONTEND_URL=http://localhost:5173
 ## 🧠 References
 
 This project is based on the tutorial by **GreatStack** on YouTube:
-🎥 [Build Full Stack Food Ordering Website using React JS, MongoDB, Express, Node JS & Stripe | Full Stack Project 2024](https://youtu.be/eRTTlS0zaW8?si=pbPTBNP1QBG1k3N)
+🎥 [Build Full Stack Food Ordering Website using React JS, MongoDB, Express, Node JS & Stripe | Full Stack Project 2024](https://youtu.be/DBMPXJJfQEA?si=dLiZ05mEJ1Z1sm7d)
 
 ---
 
-## 🔗 Project Resources
+## Project Link
 
-- **Source Code:** [https://greatstack.dev/go/tomato](https://greatstack.dev/go/tomato)
-- **Assets Download:** [https://greatstack.dev/assets/food-del-mern](https://greatstack.dev/assets/food-del-mern)
-- **Quiz & Certificate:** [https://quiz.greatstack.dev/fdel](https://quiz.greatstack.dev/fdel)
+[GitHub Repository](https://github.com/PrethigahShanmugarajah/ZestyGo.git)
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Prethigah Shanmugarajah**
 Department of Software Engineering, Faculty of Computing (2020/2021)
 Sabaragamuwa University of Sri Lanka
-
----
-
-## ⭐ Acknowledgment
-
-Special thanks to [@GreatStackDev](https://www.youtube.com/@GreatStackDev) for the comprehensive MERN stack tutorial series that inspired this project.
-
-```
-
----
-
-Would you like me to include your **backend URL (`http://localhost:4000`)** and **frontend/admin URLs** inside the README (like in your Doctor App README)?
-I can also add a **“Future Improvements”** section (for example: *Add delivery tracking, AI recommendations, etc.*).
-```
